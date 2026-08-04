@@ -155,9 +155,11 @@ Drop `.mp3` files into `assets/audio/` and reference the filename in a
 scene's `music` or `sfx` field. See `assets/audio/README.md` for more detail.
 If a file doesn't exist yet, the game just stays silent — it won't crash.
 
-There's also a single shared background music track that plays on the Menu,
-Paths, About, and Resources pages (not during gameplay) — set its filename
-in `content/config.json`'s `siteMusic` field, e.g. `"siteMusic": "background.mp3"`.
+There's also a single shared background music track that plays on every
+page, including the start of a playthrough — set its filename in
+`content/config.json`'s `siteMusic` field, e.g. `"siteMusic": "background.mp3"`.
+A scene's own `music` field still overrides it once gameplay reaches that
+scene, same as it would override any other track.
 
 ## Linking choices between scenes
 

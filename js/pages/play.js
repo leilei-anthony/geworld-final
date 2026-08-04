@@ -5,6 +5,7 @@
 import { loadScene, setEndingHandler } from '../sceneEngine.js';
 import '../audioManager.js'; // wires the mute/volume control as a side effect of importing it
 import { initGrain, triggerGlitch } from '../effects.js';
+import { initSiteMusic } from '../siteMusic.js';
 import { renderCreditsInto } from '../creditsRenderer.js';
 
 const PATH_SELECT_SCENE_ID = 'path-select';
@@ -58,16 +59,6 @@ function renderEnding(scene) {
   }
 }
 
-// Autoplay policies require a genuine user gesture on *this* document before
-// unmuted audio can play. path-select.json has no music of its own, so by
-// the time a scene with music loads the player will already have clicked at
-// least once — but this is a cheap, harmless safety net in case that ever
-// changes. See js/audioManager.js's unlock() doc comment for details.
-document.addEventListener('click', () => {
-  const bgm = document.getElementById('bgm-audio');
-  bgm.play().then(() => bgm.pause()).catch(() => {});
-}, { once: true });
-
 document.getElementById('play-again-button').addEventListener('click', () => {
   window.location.href = 'index.html';
 });
@@ -75,4 +66,11 @@ document.getElementById('play-again-button').addEventListener('click', () => {
 initGrain();
 setEndingHandler(renderEnding);
 showScreen('game');
-loadScene(PATH_SELECT_SCENE_ID).catch(reportLoadError);
+// Starts the same site-wide background track used on every other page
+// (see siteMusic.js) — awaited before the first scene loads so a scene
+// with its own "music" (e.g. man_livingroom_1's tv_white_noise.mp3) can't
+// get raced and overwritten back to the default by a slow config fetch.
+// Also covers the "needs one click before autoplay is allowed" retry that
+// used to live here as its own listener — now handled once, centrally,
+// inside initSiteMusic() itself.
+initSiteMusic().then(() => loadScene(PATH_SELECT_SCENE_ID)).catch(reportLoadError);
