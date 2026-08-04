@@ -283,8 +283,10 @@ html, body {
   /* Matches .character-sprite's object-position below — when the two
      don't share an anchor, any letterbox slack inside #stage-visual (only
      present in the portrait layout) pulls the background and the
-     characters standing on it to different heights. */
-  object-position: center bottom;
+     characters standing on it to different heights. Centered (not
+     bottom-anchored) so the art sits in the middle of the portrait
+     layout's flex-grown visual area, not pinned to its bottom edge. */
+  object-position: center;
 }
 
 #character-layer {
@@ -297,13 +299,14 @@ html, body {
   /* Fills the entire stage; object-fit: contain scales the artwork up as
      large as it can go without cropping or distorting it, centered.
      Every character renders centered regardless of a scene's "position"
-     field — kept simple on purpose. */
+     field — kept simple on purpose. Matches #scene-background's
+     object-position so the two stay aligned to each other. */
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center bottom;
+  object-position: center;
 }
 
 #dialogue-box {
