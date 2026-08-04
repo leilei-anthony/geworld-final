@@ -39,9 +39,12 @@ every page except `play.html`, which stays distraction-free during the story.
 
 Because each page is a real navigation (not a single-page app), background
 music restarts per page — only the volume/mute *preference* is remembered
-across pages (via `localStorage`); the actual moment-to-moment music
-continuity during gameplay is unaffected, since that all happens within
-`play.html`.
+across pages (via `localStorage`). The Menu, Paths, About, and Resources
+pages all play one shared site-wide loop track (configured in
+`content/config.json`'s `siteMusic` field, see `js/siteMusic.js`); `play.html`
+is unaffected and keeps driving its own per-scene music via each scene's
+`music` field, so moment-to-moment continuity during actual gameplay is
+unchanged.
 
 ## Project structure
 

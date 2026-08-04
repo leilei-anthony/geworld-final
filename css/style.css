@@ -478,42 +478,6 @@ html, body {
   background: rgba(0, 0, 0, 0.4);
 }
 
-/* ---------- Global (cross-player) choice stats ---------- */
-/* Empty by default (no markup rendered) whenever Firebase isn't configured
-   or hasn't returned data yet for a given decision point — see main.js's
-   renderGlobalChoiceStats(). */
-#global-stats {
-  width: 100%;
-  max-width: 640px;
-  margin-bottom: 20px;
-}
-
-.global-stat-block {
-  margin-bottom: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px dashed #333;
-}
-
-.global-stat-block:last-child {
-  border-bottom: none;
-}
-
-.global-stat-row {
-  padding: 4px 0;
-  font-size: 0.9em;
-  color: #999;
-}
-
-/* The option this player actually picked, called out from the pack. */
-.global-stat-row-picked {
-  color: #eee;
-  font-weight: bold;
-}
-
-.global-stat-row-picked::before {
-  content: '▸ ';
-}
-
 /* ---------- Scrolling credits / stats block ---------- */
 #credits-viewport {
   width: 100%;

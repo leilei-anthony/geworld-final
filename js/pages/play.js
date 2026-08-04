@@ -5,8 +5,6 @@
 import { loadScene, setEndingHandler } from '../sceneEngine.js';
 import '../audioManager.js'; // wires the mute/volume control as a side effect of importing it
 import { initGrain, triggerGlitch } from '../effects.js';
-import { getState } from '../stateManager.js';
-import { getGlobalStatsForScene } from '../statsManager.js';
 import { renderCreditsInto } from '../creditsRenderer.js';
 
 const PATH_SELECT_SCENE_ID = 'path-select';
@@ -31,42 +29,6 @@ function reportLoadError(err) {
   );
 }
 
-// Renders "how other players chose" for every decision point in this
-// playthrough, using the history stateManager.js already tracks. Reads are
-// done in parallel; if global stats aren't available (Firebase not set up,
-// offline, etc.) the whole section just stays empty — never an error.
-async function renderGlobalChoiceStats(container) {
-  container.innerHTML = '';
-  const { history } = getState();
-  if (history.length === 0) return;
-
-  const results = await Promise.all(
-    history.map((entry) => getGlobalStatsForScene(entry.sceneId)),
-  );
-
-  history.forEach((entry, i) => {
-    const stats = results[i];
-    if (!stats || stats.total === 0 || stats.counts.length !== entry.allChoiceTexts.length) {
-      return; // no data yet for this decision point — skip it silently
-    }
-
-    const block = document.createElement('div');
-    block.className = 'global-stat-block';
-
-    entry.allChoiceTexts.forEach((text, index) => {
-      const count = stats.counts[index] || 0;
-      const pct = Math.round((count / stats.total) * 100);
-
-      const row = document.createElement('div');
-      row.className = 'global-stat-row' + (index === entry.choiceIndex ? ' global-stat-row-picked' : '');
-      row.textContent = `${pct}% (${count}) — ${text}`;
-      block.appendChild(row);
-    });
-
-    container.appendChild(block);
-  });
-}
-
 function renderEnding(scene) {
   showScreen('ending');
 
@@ -76,15 +38,12 @@ function renderEnding(scene) {
   const messageEl = document.getElementById('ending-message');
   const creditsViewport = document.getElementById('credits-viewport');
   const creditsScroll = document.getElementById('credits-scroll');
-  const globalStats = document.getElementById('global-stats');
 
   stage.classList.toggle('screen-ending-death', scene.outcome === 'death');
   bg.src = scene.background ? `assets/backgrounds/${scene.background}` : '';
   bg.alt = scene.background || '';
   titleEl.textContent = scene.title || '';
   messageEl.textContent = scene.message || '';
-
-  renderGlobalChoiceStats(globalStats);
 
   if (scene.showCredits) {
     creditsViewport.classList.remove('hidden');

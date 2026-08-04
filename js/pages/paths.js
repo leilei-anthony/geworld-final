@@ -12,6 +12,7 @@
 
 import '../audioManager.js'; // wires the mute/volume control as a side effect of importing it
 import { initGrain } from '../effects.js';
+import { initSiteMusic } from '../siteMusic.js';
 import { getGlobalStatsForScene } from '../statsManager.js';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -290,4 +291,5 @@ async function render() {
 }
 
 initGrain();
+initSiteMusic();
 render();

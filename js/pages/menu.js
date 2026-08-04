@@ -4,6 +4,7 @@
 
 import '../audioManager.js'; // wires the mute/volume control as a side effect of importing it
 import { initGrain } from '../effects.js';
+import { initSiteMusic } from '../siteMusic.js';
 
 const WARNING_DISMISSED_KEY = 'geworld-warning-dismissed';
 
@@ -59,4 +60,5 @@ async function init() {
   showScreen(sessionStorage.getItem(WARNING_DISMISSED_KEY) === 'true' ? 'menu' : 'warning');
 }
 
+initSiteMusic();
 init();

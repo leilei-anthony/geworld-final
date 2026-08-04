@@ -4,6 +4,7 @@
 
 import '../audioManager.js'; // wires the mute/volume control as a side effect of importing it
 import { initGrain } from '../effects.js';
+import { initSiteMusic } from '../siteMusic.js';
 import { renderCreditsInto } from '../creditsRenderer.js';
 
 async function renderHelpList() {
@@ -52,5 +53,6 @@ async function renderHelpList() {
 }
 
 initGrain();
+initSiteMusic();
 renderCreditsInto(document.getElementById('research-list'), 'content/stats.json');
 renderHelpList();

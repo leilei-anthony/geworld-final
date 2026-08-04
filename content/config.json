@@ -13,5 +13,7 @@
     "howToPlay": "Click anywhere on the dialogue box to advance the conversation. When a choice appears, click it to decide what happens next. Greyed-out choices cannot be selected."
   },
 
+  "siteMusic": "background.mp3",
+
   "pathSelectSceneId": "path-select"
 }

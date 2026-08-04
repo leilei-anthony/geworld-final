@@ -41,7 +41,12 @@ function fadeTo(vol, durationMs, onDone) {
 
   function step(now) {
     const t = Math.min(1, (now - startTime) / durationMs);
-    bgm.volume = start + (vol - start) * t;
+    // Clamp: floating-point rounding on the interpolation below can land a
+    // hair outside [0, 1] (e.g. -0.003) when `start` is itself a leftover
+    // near-zero residual from a previous fade — HTMLMediaElement.volume
+    // throws IndexSizeError for anything outside that range, which would
+    // otherwise abort this rAF callback mid-fade.
+    bgm.volume = Math.min(1, Math.max(0, start + (vol - start) * t));
     if (t < 1) {
       fadeHandle = requestAnimationFrame(step);
     } else if (onDone) {

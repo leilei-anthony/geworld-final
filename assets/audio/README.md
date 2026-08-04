@@ -12,3 +12,12 @@ means the file should be at `assets/audio/tense_hum.mp3`.
 
 If a filename doesn't exist yet, the game won't crash — it just stays silent
 until the file is added.
+
+## Site-wide background music
+
+Separately from per-scene `music`/`sfx` above, the Menu, Paths, About, and
+Resources pages (everywhere except actual gameplay in `play.html`) play one
+shared looping track, configured by `content/config.json`'s `siteMusic`
+field. Drop the file in this folder and set `siteMusic` to its filename —
+same rule as above: if the file doesn't exist yet, the site just stays
+silent, it won't crash.

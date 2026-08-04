@@ -5,6 +5,7 @@
 
 import '../audioManager.js'; // wires the mute/volume control as a side effect of importing it
 import { initGrain } from '../effects.js';
+import { initSiteMusic } from '../siteMusic.js';
 
 async function renderTeamList() {
   const container = document.getElementById('team-list');
@@ -59,5 +60,6 @@ async function renderAssetCredits() {
 }
 
 initGrain();
+initSiteMusic();
 renderTeamList();
 renderAssetCredits();

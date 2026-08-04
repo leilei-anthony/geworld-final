@@ -155,6 +155,10 @@ Drop `.mp3` files into `assets/audio/` and reference the filename in a
 scene's `music` or `sfx` field. See `assets/audio/README.md` for more detail.
 If a file doesn't exist yet, the game just stays silent — it won't crash.
 
+There's also a single shared background music track that plays on the Menu,
+Paths, About, and Resources pages (not during gameplay) — set its filename
+in `content/config.json`'s `siteMusic` field, e.g. `"siteMusic": "background.mp3"`.
+
 ## Linking choices between scenes
 
 A choice's `"next"` value must exactly match another scene's `"id"` field.
@@ -183,14 +187,16 @@ the full list — you don't need to touch anything else.
 
 ## Global choice stats ("how other players chose")
 
-Every ending screen, and the Paths page, can show real percentages of how
-*every* player has answered each choice — e.g. "64% (128) — Report it to
-HR." This is fully automatic: as long as the site's Firebase project is set
-up (see `FIREBASE_SETUP.md`, a one-time setup step, not something you touch
-per-scene), every choice a player clicks is counted automatically. There is
-nothing to edit in any scene JSON for this — it just works once Firebase is
-configured. If Firebase isn't set up yet (or a player is offline), these
-sections simply don't show percentages — the rest of the site is unaffected.
+The Paths page can show real percentages of how *every* player has answered
+each choice — e.g. "64% (128) — Report it to HR," on hover over an edge in
+the diagram. This is fully automatic: as long as the site's Firebase project
+is set up (see `FIREBASE_SETUP.md`, a one-time setup step, not something you
+touch per-scene), every choice a player clicks is counted automatically.
+There is nothing to edit in any scene JSON for this — it just works once
+Firebase is configured. If Firebase isn't set up yet (or a player is
+offline), the Paths page simply doesn't show percentages — the rest of the
+site is unaffected. (Ending screens don't show this — keeping it to just the
+Paths page avoids repeating the same numbers on every playthrough's ending.)
 
 ## Adding a team member to the About page
 
