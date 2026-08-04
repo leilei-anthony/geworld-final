@@ -257,6 +257,11 @@ html, body {
   aspect-ratio: 16 / 9;
   width: min(100vw, calc(100vh * 16 / 9));
   height: min(100vh, calc(100vw * 9 / 16));
+  /* Lets the dialogue box size itself relative to the stage's own
+     rendered height (cqh) instead of the raw viewport — otherwise a
+     fixed px min-height that looks right on a full-viewport desktop
+     stage swallows most of a small, letterboxed phone stage. */
+  container-type: size;
 }
 
 #scene-background {
@@ -291,8 +296,18 @@ html, body {
   left: 5%;
   right: 5%;
   bottom: 6%;
-  min-height: 140px;
-  padding: 20px 24px;
+  /* clamp(), not a bare cq value: on a full-height desktop stage this
+     matches the old fixed 140px/20px/24px look, but on a small,
+     letterboxed phone stage (see #stage's container-type) it stops
+     shrinking at a still-readable floor instead of either overflowing
+     the box (fixed px) or shrinking to unreadably tiny text (pure cq). */
+  min-height: clamp(90px, 20cqh, 140px);
+  padding: clamp(12px, 2.5cqh, 20px) clamp(14px, 2.5cqw, 24px);
+  /* Reserves its own strip below the text for #advance-hint (which is
+     absolutely positioned, so it doesn't push text out of its way on
+     its own) — without this, long last lines run into the hint once
+     the box shrinks toward its floor size. */
+  padding-bottom: clamp(28px, 6cqh, 40px);
   background: rgba(0, 0, 0, 0.75);
   border: 1px solid #555;
   cursor: pointer;
@@ -308,13 +323,13 @@ html, body {
 
 #dialogue-text {
   line-height: 1.6;
-  font-size: 1.1em;
+  font-size: clamp(13px, 3cqw, 17.6px);
 }
 
 #advance-hint {
   position: absolute;
-  right: 20px;
-  bottom: 12px;
+  right: clamp(10px, 2.5cqw, 20px);
+  bottom: clamp(8px, 2cqh, 12px);
   font-size: 0.8em;
   color: #888;
 }
@@ -330,13 +345,13 @@ html, body {
 }
 
 .choice-btn {
-  padding: 14px 18px;
+  padding: clamp(8px, 2cqh, 14px) clamp(10px, 2.5cqw, 18px);
   text-align: left;
   background: rgba(0, 0, 0, 0.75);
   color: #eee;
   border: 1px solid #666;
   font-family: inherit;
-  font-size: 1em;
+  font-size: clamp(13px, 3cqw, 16px);
   cursor: pointer;
 }
 
