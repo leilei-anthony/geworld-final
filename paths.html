@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analog Horror Workplace VN — Paths</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/effects.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <div id="grain-overlay"></div>
+    <div id="scanline-overlay"></div>
+
+    <audio id="bgm-audio" loop></audio>
+    <audio id="sfx-audio"></audio>
+
+    <div id="audio-controls">
+      <button id="mute-btn" type="button" aria-label="Mute">Mute</button>
+      <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.6" aria-label="Volume">
+    </div>
+
+    <nav id="site-nav">
+      <a href="index.html">Menu</a>
+      <a href="play.html">Play</a>
+      <a href="paths.html" aria-current="page">Paths</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+
+    <div class="page-content">
+      <div class="content-section">
+        <h1>Every Path</h1>
+        <p class="page-intro">
+          A map of every scene and choice in the story. Each box is a scene,
+          and each line leading out of it is a choice you can make there.
+          Dashed lines mark choices that are shown in the story but can't
+          actually be chosen. Once enough players have made a choice,
+          you'll see the percentage of players who picked each path.
+        </p>
+      </div>
+      <div class="content-section-wide">
+        <div id="tree-viewport">
+          <svg id="tree-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+          <div id="tree-tooltip" class="hidden"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="js/pages/paths.js"></script>
+</body>
+</html>

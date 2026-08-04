@@ -1,0 +1,30 @@
+{
+  "id": "man_livingroom_1",
+  "type": "scene",
+  "background": "MAN-livingroom.png",
+  "music": "tv_white_noise.mp3",
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "carter", "sprite": "carter-1.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "", "text": "(The TV drones in the background. A bottle cap hits the floor.)", "sfx": "beer_open.mp3" },
+    { "speaker": "", "text": "(The phone rings. He picks up before the second ring.)", "sfx": "phone_ringing.mp3" },
+    { "speaker": "Carter", "text": "What?" },
+    { "speaker": "Employee", "text": "Good day, Sir Carter." },
+    { "speaker": "Carter", "text": "It's the middle of the night, retard.", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "What do you want?" },
+    { "speaker": "Employee", "text": "Um… The deadline of the finalized documents has been changed." },
+    { "speaker": "Carter", "text": "Mumbling mutt.", "characters": [ { "id": "carter", "sprite": "carter-4.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "You want me to give you a star sticker for this update?" },
+    { "speaker": "Carter", "text": "Get to fucking work then!", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Employee", "text": "You don’t understand, sir." },
+    { "speaker": "Employee", "text": "It’s… set for tomorrow before noon." },
+    { "speaker": "Carter", "text": "What?!" }
+  ],
+  "choices": [
+    { "text": "Step up and help your team.", "next": "man_livingroom_2", "disabled": true },
+    { "text": "Pass the responsibility to someone else.", "next": "man_livingroom_2" }
+  ]
+}

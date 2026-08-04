@@ -1,0 +1,29 @@
+{
+  "id": "man_street_3",
+  "type": "scene",
+  "background": "MAN-street.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "carter", "sprite": "carter-3.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Carter", "text": "What?" },
+    { "speaker": "Carter", "text": "Are you fucking deaf?" },
+    { "speaker": "Girl", "text": "Please go away, mister…" },
+    { "speaker": "Carter", "text": "Just a quick twirl." },
+    { "speaker": "Girl", "text": "…" },
+    { "speaker": "Girl", "text": "I have to go…" },
+    { "speaker": "", "text": "(She walks faster than she probably meant to.)" },
+    { "speaker": "Carter", "text": "Unbelievable." },
+    { "speaker": "Carter", "text": "Kids these days can’t take a fucking compliment." },
+    { "speaker": "Carter", "text": "Not even a “thank you” out of that?." },
+    { "speaker": "Girl", "text": "…" },
+    { "speaker": "", "text": "(The girl walks away.)" },
+    { "speaker": "Carter", "text": "Ungrateful bitch." }
+  ],
+  "choices": [
+    { "text": "Continue", "next": "man_office_1" }
+  ]
+}

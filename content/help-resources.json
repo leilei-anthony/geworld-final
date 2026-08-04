@@ -1,0 +1,32 @@
+[
+  {
+    "name": "PNP Women and Children Protection Center",
+    "description": "Philippine National Police unit for reporting VAWC (Violence Against Women and Children) cases, including domestic and street-level abuse.",
+    "phone": "911 (emergency) · 0919-7777-377 (Aling Pulis text hotline)",
+    "link": "https://iacvawc.gov.ph/report-abuse/"
+  },
+  {
+    "name": "NBI Anti-Violence Against Women and Children Division",
+    "description": "National Bureau of Investigation unit handling criminal investigation of VAWC cases.",
+    "phone": "(02) 8525-6028",
+    "link": "https://iacvawc.gov.ph/report-abuse/"
+  },
+  {
+    "name": "Public Attorney's Office (PAO)",
+    "description": "Free legal assistance for VAWC cases through the Department of Justice.",
+    "phone": "(02) 8929-9436 (local 106/107)",
+    "link": "https://iacvawc.gov.ph/report-abuse/"
+  },
+  {
+    "name": "Civil Service Commission - Para sa Taumbayan",
+    "description": "For workplace harassment or abuse involving Philippine government employees.",
+    "phone": "(02) 8931-7913 · (02) 8951-2575",
+    "link": "https://iacvawc.gov.ph/report-abuse/"
+  },
+  {
+    "name": "Makabata Helpline (Council for the Welfare of Children)",
+    "description": "Child protection and abuse reporting.",
+    "phone": "0915-8022-375 · 0960-3779-863",
+    "link": "https://iacvawc.gov.ph/report-abuse/"
+  }
+]

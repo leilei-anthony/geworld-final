@@ -1,0 +1,26 @@
+{
+  "id": "man_street_2",
+  "type": "scene",
+  "background": "MAN-street.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "stranger", "sprite": "girl.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Carter", "text": "Where are you rushing off to this early?" },
+    { "speaker": "Carter", "text": "That skirt looks so sexy on you!" },
+    { "speaker": "Girl", "text": "…" },
+    { "speaker": "Carter", "text": "Can you do a little spin for me?" },
+    { "speaker": "Girl", "text": "I need to get to school." },
+    { "speaker": "Carter", "text": "And I need to get to work." },
+    { "speaker": "Carter", "text": "So." },
+    { "speaker": "Carter", "text": "Better do it quickly, sweetie." },
+    { "speaker": "Girl", "text": "…" }
+  ],
+  "choices": [
+    { "text": "Leave her alone.", "next": "man_street_3", "disabled": true },
+    { "text": "Push it.", "next": "man_street_3" }
+  ]
+}

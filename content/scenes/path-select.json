@@ -1,0 +1,17 @@
+{
+  "id": "path-select",
+  "type": "scene",
+  "background": "office.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [],
+  "dialogue": [
+    { "speaker": "", "text": "Two people worked here. Only one of them gets to leave the same." },
+    { "speaker": "", "text": "Choose whose story to follow." }
+  ],
+  "choices": [
+    { "text": "Follow him.", "next": "man_livingroom_1" },
+    { "text": "Follow her.", "next": "woman_livingroom_1" }
+  ]
+}

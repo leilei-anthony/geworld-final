@@ -1,0 +1,12 @@
+{
+  "id": "woman_ending_notfast",
+  "type": "ending",
+  "outcome": "death",
+  "background": "WOMAN-livingroom.png",
+  "music": null,
+  "sfx": "scary_sting.mp3",
+  "glitch": true,
+  "title": "NOT FAST ENOUGH",
+  "message": "William: What did I just tell you, cunt?!",
+  "showCredits": true
+}

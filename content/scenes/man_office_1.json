@@ -1,0 +1,41 @@
+{
+  "id": "man_office_1",
+  "type": "scene",
+  "background": "office.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "carter", "sprite": "carter-1.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Carter", "text": "I'm here.", "sfx": "door_open_close.mp3" },
+    { "speaker": "Coworker", "text": "Good afternoon, Mr. Carter.", "characters": [ { "id": "coworker", "sprite": "coworker-2.png", "position": "center" } ] },
+    { "speaker": "Coworker", "text": "They've been requesting to see the papers for an hour now." },
+    { "speaker": "Carter", "text": "Where the hell is that woman?", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "She should have it!" },
+    { "speaker": "Coworker", "text": "Who?", "characters": [ { "id": "coworker", "sprite": "coworker-2.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "The cow-looking one.", "characters": [ { "id": "carter", "sprite": "carter-4.png", "position": "center" } ] },
+    { "speaker": "Coworker", "text": "If you mean Mrs.—", "characters": [ { "id": "coworker", "sprite": "coworker-2.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "I couldn't give a flying fuck about who she is or what stupid name she's got.", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "Where is she?!" },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "Mr. Carter…" },
+    { "speaker": "Carter", "text": "There you are.", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "It's ridiculous how a woman as big as you can go missing in an office like this.", "characters": [ { "id": "carter", "sprite": "carter-4.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "Where is it?", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "Where is what, Mr. Carter?", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "The finalized documents, goddamn it!", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "Did you check your email?", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "Yes.", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "Then you saw what I sent from last night.", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "I haven't received any emails from you, sir." }
+  ],
+  "choices": [
+    { "text": "Lash out and humiliate her in front of everyone.", "next": "man_office_2" },
+    { "text": "Explain how you sent a last minute message.", "next": "man_office_2", "disabled": true }
+  ]
+}

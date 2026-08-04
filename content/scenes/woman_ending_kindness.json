@@ -1,0 +1,12 @@
+{
+  "id": "woman_ending_kindness",
+  "type": "ending",
+  "outcome": "death",
+  "background": "WOMAN-livingroom.png",
+  "music": null,
+  "sfx": "scary_sting.mp3",
+  "glitch": true,
+  "title": "KINDNESS WAS THE MISTAKE",
+  "message": "William: Stupid woman.",
+  "showCredits": true
+}

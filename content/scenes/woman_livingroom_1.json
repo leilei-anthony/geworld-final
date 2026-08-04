@@ -1,0 +1,30 @@
+{
+  "id": "woman_livingroom_1",
+  "type": "scene",
+  "background": "WOMAN-livingroom.png",
+  "music": "tv_white_noise.mp3",
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "woman", "sprite": "woman.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "", "text": "(Notifications buzz across the counter, one after another.)", "sfx": "message_tone.mp3" },
+    { "speaker": "", "text": "(Dishes clank in the sink.)" },
+    { "speaker": "Woman", "text": "Alright, alright!" },
+    { "speaker": "Woman", "text": "Who could be blowing my phone up at this hour?" },
+    { "speaker": "", "text": "(The front door slams open.)", "sfx": "door_open_close.mp3", "characters": [ { "id": "william", "sprite": "william.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "…" },
+    { "speaker": "Woman", "text": "William?" },
+    { "speaker": "Woman", "text": "Is that you?" },
+    { "speaker": "", "text": "(Keys hit the countertop, hard.)", "sfx": "stapler_slap.mp3" },
+    { "speaker": "William", "text": "Who the fuck else, woman?" },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "Be careful." },
+    { "speaker": "Woman", "text": "You're really drunk." }
+  ],
+  "choices": [
+    { "text": "Help your husband walk around.", "next": "woman_livingroom_1_bad" },
+    { "text": "Let him be for your own safety.", "next": "woman_livingroom_2" }
+  ]
+}

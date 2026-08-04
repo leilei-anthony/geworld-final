@@ -1,0 +1,648 @@
+/* ============================================================
+   style.css — layout, typography, and UI for all screens.
+   Visual FX (grain/scanlines/glitch/desaturation) live in effects.css.
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #000;
+  color: #eee;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ---------- Screens ---------- */
+/* Only one .screen has .active at a time; main.js toggles this class. */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen.active {
+  display: flex;
+}
+
+.panel {
+  max-width: 640px;
+  padding: 40px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid #444;
+}
+
+.panel h1 {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.panel p {
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.hint {
+  font-size: 0.85em;
+  color: #888;
+  margin-top: 24px;
+  border-top: 1px solid #333;
+  padding-top: 16px;
+}
+
+/* Keeps text available to screen readers without rendering it visually. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Main Menu (startup screen) ---------- */
+/* Three same-size (1366x768) layers stacked to form the hero image: an
+   opaque office background, plus a Carter silhouette and title lockup that
+   carry real alpha transparency (converted from flat black-on-white art)
+   so they read correctly over both the dark ceiling and the light wall. */
+.startup-visual {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.startup-visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* contain (not cover): this is a fixed composition — title top-left,
+     Carter at the right edge — so nothing is allowed to crop off-screen.
+     Letterboxes on viewports that don't match the art's aspect ratio,
+     which reads fine since the page background is already black. */
+  object-fit: contain;
+  object-position: center;
+}
+
+.screen-startup .startup-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 24px 14vh;
+  overflow: visible;
+}
+
+.panel-startup {
+  max-width: none;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.panel-startup .btn-primary {
+  margin-top: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.panel-startup .hint {
+  max-width: 420px;
+  margin: 20px auto 0;
+  border-top: none;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 28px;
+  background: transparent;
+  color: #eee;
+  border: 1px solid #888;
+  font-family: inherit;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #eee;
+  color: #000;
+}
+
+/* ---------- Site nav (menu/paths/about/resources pages only, not play.html) ---------- */
+#site-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid #444;
+}
+
+#site-nav a {
+  color: #999;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85em;
+  padding: 8px 12px;
+  border-bottom: 1px solid transparent;
+}
+
+#site-nav a:hover {
+  color: #eee;
+}
+
+#site-nav a[aria-current="page"] {
+  color: #eee;
+  border-bottom-color: #eee;
+}
+
+/* Scrollable content area for non-game pages, sits below #site-nav within
+   the still viewport-pinned #app (so grain/scanlines/audio-controls, which
+   are positioned relative to #app, stay correctly fixed on every page). */
+.page-content {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  padding: 40px 24px 80px;
+}
+
+.page-content h1 {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.page-content .page-intro {
+  color: #999;
+  max-width: 640px;
+  margin: 0 auto 32px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Center the Main Menu's panel horizontally within the scrollable content
+   area (its normal-flow container, unlike the flex-centered .screen panels
+   used on the warning/ending screens). */
+.page-content .panel {
+  margin: 0 auto;
+}
+
+/* ---------- Audio controls (persistent, top-right) ---------- */
+#audio-controls {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 6px 10px;
+  border: 1px solid #444;
+}
+
+#mute-btn {
+  background: none;
+  border: none;
+  color: #eee;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+#volume-slider {
+  width: 90px;
+}
+
+/* ---------- Game stage (scene engine) ---------- */
+/* Locked to 16:9 (the native size of every background art asset) and
+   centered within the viewport, letterboxing on anything else — so the
+   backgrounds never crop differently, and the dialogue/choice layers'
+   percentage-based positions land in the same place, on every device.
+   The min()/max() pair is the standard CSS-only "object-fit: contain for
+   a whole box" trick: it picks whichever of full-width or full-height
+   keeps the other axis within the viewport. */
+#stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+}
+
+#scene-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#character-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.character-sprite {
+  /* Fills the entire stage; object-fit: contain scales the artwork up as
+     large as it can go without cropping or distorting it, centered.
+     Every character renders centered regardless of a scene's "position"
+     field — kept simple on purpose. */
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+#dialogue-box {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  bottom: 6%;
+  min-height: 140px;
+  padding: 20px 24px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid #555;
+  cursor: pointer;
+}
+
+#speaker-name {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #aaa;
+  margin-bottom: 8px;
+  min-height: 1em;
+}
+
+#dialogue-text {
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+#advance-hint {
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+  font-size: 0.8em;
+  color: #888;
+}
+
+#choice-layer {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  bottom: 6%;
+  display: none; /* sceneEngine.js switches this to 'flex' once dialogue ends */
+  flex-direction: column;
+  gap: 10px;
+}
+
+.choice-btn {
+  padding: 14px 18px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.75);
+  color: #eee;
+  border: 1px solid #666;
+  font-family: inherit;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.choice-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Disabled choices stay fully visible (that's the point) but can't be clicked. */
+.choice-btn.choice-disabled {
+  color: #666;
+  border-color: #333;
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.choice-btn.choice-disabled:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Ending screen ---------- */
+#ending-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#ending-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+}
+
+#ending-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+#ending-title {
+  font-size: 2.4em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+#ending-message {
+  max-width: 600px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 24px;
+}
+
+/* Death endings get a starker, more "game over" look. */
+.screen-ending-death #ending-title {
+  color: #fff;
+  font-size: 3em;
+}
+
+.screen-ending-death #ending-content {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Global (cross-player) choice stats ---------- */
+/* Empty by default (no markup rendered) whenever Firebase isn't configured
+   or hasn't returned data yet for a given decision point — see main.js's
+   renderGlobalChoiceStats(). */
+#global-stats {
+  width: 100%;
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+
+.global-stat-block {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #333;
+}
+
+.global-stat-block:last-child {
+  border-bottom: none;
+}
+
+.global-stat-row {
+  padding: 4px 0;
+  font-size: 0.9em;
+  color: #999;
+}
+
+/* The option this player actually picked, called out from the pack. */
+.global-stat-row-picked {
+  color: #eee;
+  font-weight: bold;
+}
+
+.global-stat-row-picked::before {
+  content: '▸ ';
+}
+
+/* ---------- Scrolling credits / stats block ---------- */
+#credits-viewport {
+  width: 100%;
+  max-width: 640px;
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  margin-bottom: 24px;
+}
+
+#credits-viewport.hidden {
+  display: none;
+}
+
+#credits-scroll {
+  position: absolute;
+  width: 100%;
+  animation: credits-scroll-up 28s linear infinite;
+}
+
+.credit-entry {
+  padding: 18px 12px;
+  border-bottom: 1px dashed #333;
+}
+
+.credit-stat {
+  color: #eee;
+  line-height: 1.5;
+}
+
+.credit-source {
+  margin-top: 6px;
+  font-size: 0.8em;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.credit-source a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+@keyframes credits-scroll-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(-100%); }
+}
+
+/* ---------- Generic content cards (About / Resources pages) ---------- */
+.content-section {
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+/* Wider variant for content that needs more horizontal room than prose does
+   (currently just the Paths tree diagram) — still centered, still caps out
+   so the diagram doesn't stretch edge-to-edge on very wide screens. */
+.content-section-wide {
+  max-width: 1100px;
+  margin: 0 auto 48px;
+}
+
+.content-section h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.content-card {
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #444;
+}
+
+.content-card-title {
+  color: #eee;
+  font-weight: bold;
+}
+
+.content-card-subtitle {
+  color: #999;
+  font-size: 0.85em;
+  margin-top: 4px;
+}
+
+.content-card-body {
+  margin-top: 8px;
+  color: #ccc;
+  line-height: 1.5;
+  font-size: 0.9em;
+}
+
+.content-card a {
+  color: #eee;
+}
+
+/* ---------- Paths page (auto-generated story tree) ---------- */
+#tree-viewport {
+  position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #444;
+  background: rgba(0, 0, 0, 0.3);
+  /* Keeps the topmost edge labels from crowding the border — paths.js's
+     tooltip Y-position math adds this same offset, so keep them in sync. */
+  padding-top: 24px;
+  /* Make the scrollbar itself visibly part of the UI (some platforms hide
+     overlay scrollbars entirely until hovered) — a wide diagram with no
+     visible way to scroll it reads as broken, not intentional. */
+  scrollbar-width: thin;
+  scrollbar-color: #666 transparent;
+}
+
+#tree-viewport::-webkit-scrollbar {
+  height: 10px;
+}
+
+#tree-viewport::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+#tree-viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Hover popup for an edge's global choice stats — positioned by paths.js
+   relative to #tree-viewport (so it scrolls with the diagram), hidden
+   whenever there's no data for that edge yet, same silent-degradation
+   pattern as the rest of the global stats feature. */
+#tree-tooltip {
+  position: absolute;
+  z-index: 30;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid #666;
+  color: #eee;
+  font-size: 0.85em;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+#tree-tooltip.hidden {
+  display: none;
+}
+
+.tree-node rect {
+  fill: rgba(0, 0, 0, 0.6);
+  stroke: #888;
+  stroke-width: 1;
+}
+
+.tree-node.tree-node-ending rect {
+  stroke: #eee;
+  stroke-width: 2;
+}
+
+.tree-node text {
+  fill: #eee;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+}
+
+.tree-edge {
+  stroke: #888;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* Invisible, much fatter copy of each edge's curve purely as a hover hit
+   target — the visible line is only 1.5px wide, too thin to reliably
+   hover directly. */
+.tree-edge-hit {
+  stroke: transparent;
+  stroke-width: 18;
+  fill: none;
+  cursor: pointer;
+}
+
+.tree-edge-disabled {
+  stroke: #444;
+  stroke-dasharray: 4 4;
+}
+
+.tree-edge-label {
+  fill: #999;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+}
+
+/* Sits behind .tree-edge-label so the text stays legible over the grain
+   overlay and wherever a label happens to cross a connecting line. */
+.tree-edge-label-bg {
+  fill: #000;
+  fill-opacity: 0.7;
+}

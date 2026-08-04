@@ -1,0 +1,28 @@
+{
+  "id": "man_street_1",
+  "type": "scene",
+  "background": "MAN-street.png",
+  "music": null,
+  "sfx": "footsteps_street.mp3",
+  "glitch": false,
+  "characters": [
+    { "id": "carter", "sprite": "carter-2.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Carter", "text": "Tell them I'll be there!" },
+    { "speaker": "Employee", "text": "Do you also have the documents prepared?" },
+    { "speaker": "Carter", "text": "It will be there!" },
+    { "speaker": "Carter", "text": "I will be there!" },
+    { "speaker": "", "text": "(He hangs up before dialing again.)" },
+    { "speaker": "Carter", "text": "Pick up, woman!" },
+    { "speaker": "", "text": "(No answer.)" },
+    { "speaker": "Carter", "text": "Useless piece of…" },
+    { "speaker": "", "text": "(A girl on her way to school walks by.)" },
+    { "speaker": "Carter", "text": "Oh." },
+    { "speaker": "Carter", "text": "Why hello there, little one." }
+  ],
+  "choices": [
+    { "text": "Leave her be.", "next": "man_street_2", "disabled": true },
+    { "text": "Catcall her.", "next": "man_street_2" }
+  ]
+}

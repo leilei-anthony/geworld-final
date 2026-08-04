@@ -1,0 +1,80 @@
+/* ============================================================
+   effects.css — analog horror look: desaturation, grain, scanlines, glitch.
+   Keep these deliberately gentle: unsettling via distortion, never rapid
+   bright/dark flashing (photosensitivity).
+   ============================================================ */
+
+/* Everything in the game is forced to black & white, so any color image
+   dropped into /assets/ automatically matches without pre-editing. */
+#app {
+  filter: grayscale(1) contrast(1.15) brightness(0.95);
+}
+
+/* ---------- Scanlines ---------- */
+#scanline-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35) 0px,
+    rgba(0, 0, 0, 0.35) 1px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0) 3px
+  );
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}
+
+/* ---------- Film grain ---------- */
+/* background-image is set inline by effects.js (data URL of a noise tile). */
+#grain-overlay {
+  position: fixed;
+  inset: -50px; /* oversized so the jitter animation never reveals an edge */
+  z-index: 91;
+  pointer-events: none;
+  opacity: 0.18;
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  animation: grain-jitter 700ms steps(6) infinite;
+}
+
+@keyframes grain-jitter {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-4%, 2%); }
+  40%  { transform: translate(3%, -3%); }
+  60%  { transform: translate(-2%, -2%); }
+  80%  { transform: translate(4%, 1%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ---------- Glitch (triggered per-scene via .glitch on #stage / #ending-stage) ---------- */
+/* One-shot, ~1.5s: slight positional jitter + horizontal slice offsets.
+   Deliberately no opacity/brightness flicker — reads as "wrong" without
+   ever strobing. */
+.glitch {
+  animation: glitch-jitter 1.5s steps(2, end) 1;
+}
+
+@keyframes glitch-jitter {
+  0%   { transform: translate(0, 0); clip-path: inset(0 0 0 0); }
+  10%  { transform: translate(-6px, 2px); clip-path: inset(10% 0 60% 0); }
+  20%  { transform: translate(5px, -3px); clip-path: inset(50% 0 20% 0); }
+  30%  { transform: translate(-4px, 0); clip-path: inset(0 0 0 0); }
+  45%  { transform: translate(6px, 3px); clip-path: inset(70% 0 5% 0); }
+  60%  { transform: translate(-3px, -2px); clip-path: inset(0 0 0 0); }
+  75%  { transform: translate(4px, 1px); clip-path: inset(30% 0 40% 0); }
+  100% { transform: translate(0, 0); clip-path: inset(0 0 0 0); }
+}
+
+/* Respect reduced-motion preferences: no grain jitter or glitch animation,
+   fall back to a static (but still desaturated) look. */
+@media (prefers-reduced-motion: reduce) {
+  #grain-overlay {
+    animation: none;
+  }
+  .glitch {
+    animation: none;
+  }
+}

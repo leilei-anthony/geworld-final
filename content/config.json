@@ -1,0 +1,17 @@
+{
+  "gameTitle": "Listen or You're Fired",
+  "gameSubtitle": "a workplace story",
+
+  "contentWarning": {
+    "heading": "Content Warning",
+    "body": "This story deals with workplace harassment, sexual harassment, discriminatory language, and violence. One path is told from the perspective of the person causing harm, and every choice offered to you as that character is written to be difficult to make. It does not contain graphic depictions, but the language throughout is harsh and the ending is dark. Please take care of yourself.",
+    "buttonLabel": "I Understand"
+  },
+
+  "mainMenu": {
+    "playButtonLabel": "Start Game",
+    "howToPlay": "Click anywhere on the dialogue box to advance the conversation. When a choice appears, click it to decide what happens next. Greyed-out choices cannot be selected."
+  },
+
+  "pathSelectSceneId": "path-select"
+}

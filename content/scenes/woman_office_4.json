@@ -1,0 +1,29 @@
+{
+  "id": "woman_office_4",
+  "type": "scene",
+  "background": "office.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "woman", "sprite": "woman.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Woman", "text": "…" },
+    { "speaker": "Woman", "text": "I did not receive an email from you, Mr. Carter–" },
+    { "speaker": "", "text": "(Something crashes to the floor.)", "sfx": "stapler_slap.mp3", "characters": [ { "id": "carter", "sprite": "carter-4.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "I take it back." },
+    { "speaker": "Carter", "text": "You're no cow." },
+    { "speaker": "Carter", "text": "You're a fucking rhinoceros." },
+    { "speaker": "Carter", "text": "They have very poor eyesight." },
+    { "speaker": "Carter", "text": "But have an extremely strong sense of smell." },
+    { "speaker": "Carter", "text": "I bet you can tell what everyone in this room had for lunch." },
+    { "speaker": "Woman", "text": "I…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "…did not receive an email from you… Mr. Carter…" },
+    { "speaker": "Carter", "text": "Check again.", "sfx": "typing.mp3", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] }
+  ],
+  "choices": [
+    { "text": "Correct him and risk humiliating your boss.", "next": "woman_office_5" },
+    { "text": "Be direct.", "next": "woman_office_5" }
+  ]
+}

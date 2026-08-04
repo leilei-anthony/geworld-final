@@ -1,0 +1,30 @@
+{
+  "id": "woman_office_2",
+  "type": "scene",
+  "background": "office.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "carter", "sprite": "carter-1.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Carter", "text": "Where is she?!" },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "Mr. Carter…" },
+    { "speaker": "Carter", "text": "There you are.", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "It's ridiculous how a woman as big as you can go missing in an office like this." },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "Where is it?", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "Where is what, Mr. Carter?", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "The finalized documents, goddamn it!", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "Did you check your email?", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "Yes.", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "Then you saw what I sent from last night.", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] }
+  ],
+  "choices": [
+    { "text": "Act innocent.", "next": "woman_office_3" },
+    { "text": "Explain how you didn't receive an email.", "next": "woman_office_3" }
+  ]
+}

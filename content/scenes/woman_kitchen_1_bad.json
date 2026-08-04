@@ -1,0 +1,25 @@
+{
+  "id": "woman_kitchen_1_bad",
+  "type": "scene",
+  "background": "WOMAN-kitchen.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "woman", "sprite": "woman.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "", "text": "(Powder dissolves into the pan.)" },
+    { "speaker": "Woman", "text": "Here you go." },
+    { "speaker": "Woman", "text": "Hope you have a nice meal." },
+    { "speaker": "", "text": "(Silence. Then cutlery against plates.)", "characters": [ { "id": "william", "sprite": "william.png", "position": "center" } ] },
+    { "speaker": "", "text": "(A sudden, violent cough.)" },
+    { "speaker": "William", "text": "What the fuck did you do?!" },
+    { "speaker": "", "text": "(He retches, gagging.)" },
+    { "speaker": "William", "text": "Are you trying to kill me?!" },
+    { "speaker": "", "text": "(Furniture crashes. Footsteps pound closer.)", "sfx": "heavy_drop.mp3" }
+  ],
+  "choices": [
+    { "text": "Continue", "next": "woman_ending_foughtback" }
+  ]
+}

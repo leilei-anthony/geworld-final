@@ -1,0 +1,26 @@
+{
+  "id": "man_office_2",
+  "type": "scene",
+  "background": "office.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "carter", "sprite": "carter-4.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Carter", "text": "Hah!" },
+    { "speaker": "Carter", "text": "I didn't think it was possible for you to get dumber." },
+    { "speaker": "Carter", "text": "And here you are, proving me wrong." },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "I'm not sure I follow." },
+    { "speaker": "Carter", "text": "Of course, you don't.", "characters": [ { "id": "carter", "sprite": "carter-4.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "All you perfectly follow is the path to the pantry." },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "I did not receive an email from you, Mr. Carter." }
+  ],
+  "choices": [
+    { "text": "Ask for an explanation and listen considerately.", "next": "man_office_3", "disabled": true },
+    { "text": "Trash her cubicle and make a scene.", "next": "man_office_3" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "woman_office_6",
+  "type": "scene",
+  "background": "office.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "woman", "sprite": "woman.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Woman", "text": "You have no right to talk to me like this." },
+    { "speaker": "Carter", "text": "I have every goddamn right!", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "Whoever allowed women in the workplace should get fucked by a ten foot pole." },
+    { "speaker": "Carter", "text": "You're all useless." },
+    { "speaker": "Carter", "text": "Who can the leader rely on now?" },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "Aren't we supposed to rely on you?" }
+  ],
+  "choices": [
+    { "text": "Stand your ground.", "next": "woman_ending" },
+    { "text": "Stay quiet.", "next": "woman_ending", "disabled": true }
+  ]
+}

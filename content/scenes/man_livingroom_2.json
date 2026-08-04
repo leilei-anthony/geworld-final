@@ -1,0 +1,27 @@
+{
+  "id": "man_livingroom_2",
+  "type": "scene",
+  "background": "MAN-livingroom.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "carter", "sprite": "carter-1.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Carter", "text": "Send me a copy of those papers." },
+    { "speaker": "Carter", "text": "Now!", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Employee", "text": "Right away, sir." },
+    { "speaker": "", "text": "(A notification chimes. Sent.)", "sfx": "message_tone.mp3" },
+    { "speaker": "Employee", "text": "What else can we do to hel—" },
+    { "speaker": "", "text": "(The line cuts off. The room goes quiet again.)", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "Hell…" },
+    { "speaker": "", "text": "The man ends the call and types vigorously.", "sfx": "phone_typing.mp3", "characters": [ { "id": "carter", "sprite": "carter-4.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "This woman better reply soon.", "sfx": "beer_drink_yell.mp3" }
+
+  ],
+  "choices": [
+    { "text": "Go to sleep.", "next": "man_street_1", "disabled": true },
+    { "text": "Drink more until you pass out.", "next": "man_street_1" }
+  ]
+}

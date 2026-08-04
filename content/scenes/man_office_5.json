@@ -1,0 +1,23 @@
+{
+  "id": "man_office_5",
+  "type": "scene",
+  "background": "office.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "carter", "sprite": "carter-3.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Carter", "text": "I have every goddamn right!" },
+    { "speaker": "Carter", "text": "Whoever allowed women in the workplace should get fucked by a ten foot pole.", "characters": [ { "id": "carter", "sprite": "carter-4.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "You're all useless.", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "Who can the leader rely on now?" },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "Aren't we supposed to rely on you?" }
+  ],
+  "choices": [
+    { "text": "Leave the building and better yourself.", "next": "man_ending", "disabled": true },
+    { "text": "Kill the woman.", "next": "man_ending" }
+  ]
+}

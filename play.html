@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analog Horror Workplace VN — Play</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/effects.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <div id="grain-overlay"></div>
+    <div id="scanline-overlay"></div>
+
+    <audio id="bgm-audio" loop></audio>
+    <audio id="sfx-audio"></audio>
+
+    <div id="audio-controls">
+      <button id="mute-btn" type="button" aria-label="Mute">Mute</button>
+      <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.6" aria-label="Volume">
+    </div>
+
+    <!-- No site nav here on purpose — keeps the story screens distraction-free.
+         Getting here already passed through index.html's content warning. -->
+
+    <!-- The scene engine renders into these elements. -->
+    <section id="screen-game" class="screen active">
+      <div id="stage">
+        <img id="scene-background" src="" alt="">
+        <div id="character-layer"></div>
+        <div id="dialogue-box">
+          <div id="speaker-name"></div>
+          <div id="dialogue-text"></div>
+          <div id="advance-hint">▼ click to continue</div>
+        </div>
+        <div id="choice-layer"></div>
+      </div>
+    </section>
+
+    <!-- Ending screen (death / neutral / survival). -->
+    <section id="screen-ending" class="screen">
+      <div id="ending-stage">
+        <img id="ending-background" src="" alt="">
+        <div id="ending-content">
+          <h1 id="ending-title"></h1>
+          <p id="ending-message"></p>
+          <div id="global-stats"></div>
+          <div id="credits-viewport" class="hidden">
+            <div id="credits-scroll"></div>
+          </div>
+          <button id="play-again-button" class="btn-primary" type="button">Play Again</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script type="module" src="js/pages/play.js"></script>
+</body>
+</html>

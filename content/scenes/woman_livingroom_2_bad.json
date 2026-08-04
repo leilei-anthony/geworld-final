@@ -1,0 +1,22 @@
+{
+  "id": "woman_livingroom_2_bad",
+  "type": "scene",
+  "background": "WOMAN-livingroom.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "woman", "sprite": "woman.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Woman", "text": "Alright." },
+    { "speaker": "Woman", "text": "But just give me a second, William." },
+    { "speaker": "Woman", "text": "I need to check my notifications." },
+    { "speaker": "Woman", "text": "It could be something important from work." },
+    { "speaker": "William", "text": "What did I just tell you, cunt?!", "characters": [ { "id": "william", "sprite": "william.png", "position": "center" } ] },
+    { "speaker": "", "text": "(Glass shatters.)", "sfx": "beer_bottle_break.mp3" }
+  ],
+  "choices": [
+    { "text": "Continue", "next": "woman_ending_notfast" }
+  ]
+}

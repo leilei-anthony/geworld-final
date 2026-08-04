@@ -1,0 +1,32 @@
+{
+  "id": "man_office_3",
+  "type": "scene",
+  "background": "office.png",
+  "music": null,
+  "sfx": null,
+  "glitch": true,
+  "characters": [
+    { "id": "carter", "sprite": "carter-3.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "", "text": "(Objects clatter to the floor.)", "sfx": "stapler_slap.mp3" },
+    { "speaker": "Carter", "text": "I take it back." },
+    { "speaker": "Carter", "text": "You're no cow." },
+    { "speaker": "Carter", "text": "You're a fucking rhinoceros.", "characters": [ { "id": "carter", "sprite": "carter-4.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "They have very poor eyesight." },
+    { "speaker": "Carter", "text": "But have an extremely strong sense of smell." },
+    { "speaker": "Carter", "text": "I bet you can tell what everyone in this room had for lunch." },
+    { "speaker": "Woman", "text": "I…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "…did not receive an email from you… Mr. Carter…" },
+    { "speaker": "Carter", "text": "Check again.", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "", "text": "(Typing.)", "sfx": "phone_typing.mp3", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "", "text": "…" },
+    { "speaker": "Woman", "text": "You sent me a message, sir." },
+    { "speaker": "Woman", "text": "Not an email." },
+    { "speaker": "Carter", "text": "…", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] }
+  ],
+  "choices": [
+    { "text": "Shift the humiliation and pin the blame on her.", "next": "man_office_4" },
+    { "text": "Accept you're wrong and apologize.", "next": "man_office_4", "disabled": true }
+  ]
+}

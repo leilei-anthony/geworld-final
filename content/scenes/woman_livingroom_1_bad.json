@@ -1,0 +1,23 @@
+{
+  "id": "woman_livingroom_1_bad",
+  "type": "scene",
+  "background": "WOMAN-livingroom.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "william", "sprite": "william.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "William", "text": "Get your fucking hands off of me!" },
+    { "speaker": "William", "text": "I can take care of myself." },
+    { "speaker": "William", "text": "Do I look like a pathetic, useless bitch to you?!" },
+    { "speaker": "Woman", "text": "No.", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "I just want to help." },
+    { "speaker": "William", "text": "Stupid woman.", "characters": [ { "id": "william", "sprite": "william.png", "position": "center" } ] },
+    { "speaker": "", "text": "(Glass shatters against the wall.)", "sfx": "beer_bottle_break.mp3" }
+  ],
+  "choices": [
+    { "text": "Continue", "next": "woman_ending_kindness" }
+  ]
+}

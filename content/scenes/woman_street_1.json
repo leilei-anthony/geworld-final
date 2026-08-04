@@ -1,0 +1,30 @@
+{
+  "id": "woman_street_1",
+  "type": "scene",
+  "background": "WOMAN-kitchen.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "woman", "sprite": "woman.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "", "text": "(Plates clink gently.)" },
+    { "speaker": "Woman", "text": "Here you go." },
+    { "speaker": "Woman", "text": "Hope you have a nice meal." },
+    { "speaker": "", "text": "(Silence. Then a fist slams the table.)", "sfx": "heavy_drop.mp3", "characters": [ { "id": "william", "sprite": "william.png", "position": "center" } ] },
+    { "speaker": "William", "text": "Gonna stand there and gawk at me the entire time?" },
+    { "speaker": "William", "text": "Get lost, stupid bitch!" },
+    { "speaker": "", "text": "(She leaves. Footsteps echo down the street.)", "sfx": "footsteps_street.mp3", "background": "WOMAN-street.png", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "", "text": "(A whistle cuts through the street noise.)" },
+    { "speaker": "Stranger", "text": "Hey, sweetheart!" },
+    { "speaker": "Stranger", "text": "Where are you rushing off to, looking like that?" },
+    { "speaker": "Woman", "text": "…" },
+    { "speaker": "Stranger", "text": "Come on." },
+    { "speaker": "Stranger", "text": "Give me a smile!" }
+  ],
+  "choices": [
+    { "text": "Ignore and keep walking.", "next": "woman_street_1_bad" },
+    { "text": "Pretend to be mute.", "next": "woman_office_1" }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "man_office_4",
+  "type": "scene",
+  "background": "office.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "woman", "sprite": "woman.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Carter", "text": "Regardless.", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "You should've checked!", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "It is unprofessional to contact me through messages, Mr. Carter." },
+    { "speaker": "Woman", "text": "You almost fired me for that." },
+    { "speaker": "Carter", "text": "Well, in this case.", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "It was an emergency." },
+    { "speaker": "Woman", "text": "I had the same reason as last time.", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "An emergency." },
+    { "speaker": "Woman", "text": "But you still didn't consider it." },
+    { "speaker": "Woman", "text": "Remember?" },
+    { "speaker": "Carter", "text": "…", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "Your message was also sent very late.", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "It's inconsiderate to give me an immediate task on such short notice." },
+    { "speaker": "Carter", "text": "…", "characters": [ { "id": "carter", "sprite": "carter-1.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "I'm your boss.", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "And you dare lecture me on this like I'm stupid?" },
+    { "speaker": "Carter", "text": "I'm in charge for a fucking reason." },
+    { "speaker": "Carter", "text": "For all you know, I'm the smartest person in this room.", "characters": [ { "id": "carter", "sprite": "carter-4.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "I don't have time for this.", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "All women do is talk bullshit." },
+    { "speaker": "Carter", "text": "Your mouths never run out of spit when it comes to stupid crap." },
+    { "speaker": "Carter", "text": "In conclusion…", "characters": [ { "id": "carter", "sprite": "carter-4.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "There is no way you haven't checked your phone all day!", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "I was busy.", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "With what?", "characters": [ { "id": "carter", "sprite": "carter-4.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "Eating?" },
+    { "speaker": "Carter", "text": "Slouching?" },
+    { "speaker": "Carter", "text": "Sleeping around?", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "You have no right to talk to me like this.", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] }
+  ],
+  "choices": [
+    { "text": "Agree with her statement and help finalize the project.", "next": "man_office_5", "disabled": true },
+    { "text": "Disregard her points and storm off.", "next": "man_office_5" }
+  ]
+}

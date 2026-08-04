@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analog Horror Workplace VN - About</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/effects.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <div id="grain-overlay"></div>
+    <div id="scanline-overlay"></div>
+
+    <audio id="bgm-audio" loop></audio>
+    <audio id="sfx-audio"></audio>
+
+    <div id="audio-controls">
+      <button id="mute-btn" type="button" aria-label="Mute">Mute</button>
+      <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.6" aria-label="Volume">
+    </div>
+
+    <nav id="site-nav">
+      <a href="index.html">Menu</a>
+      <a href="play.html">Play</a>
+      <a href="paths.html">Paths</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="resources.html">Resources</a>
+    </nav>
+
+    <div class="page-content">
+      <div class="content-section">
+        <h1>About This Project</h1>
+        <p class="page-intro" id="about-description">
+          This visual novel was created as the final project for the GEWORLD
+          subject, Group 5. It follows two perspectives inside the same
+          workplace, telling a difficult story about harassment and the
+          choices, and lack of thereof, that shape it.
+        </p>
+      </div>
+
+      <div class="content-section">
+        <h2>Team</h2>
+        <div id="team-list"></div>
+      </div>
+
+      <div class="content-section">
+        <h2>Assets &amp; Inspiration</h2>
+        <p class="page-intro">Tools and references used while building this project.</p>
+        <div id="asset-credits-list"></div>
+      </div>
+
+      <div class="content-section">
+        <h2>Declaration of AI Usage</h2>
+        <p class="page-intro">
+          No AI was used in writing the story. The dialogue, choices, and
+          endings are entirely the team's own work. AI tools were used only
+          for the following, unrelated to the writing:
+        </p>
+        <div class="content-card">
+          <div class="content-card-title">Gemini</div>
+          <div class="content-card-subtitle">Google's AI-generated overviews, encountered while researching the topics covered in this project</div>
+        </div>
+        <div class="content-card">
+          <div class="content-card-title">Claude Code</div>
+          <div class="content-card-subtitle">Anthropic's AI coding assistant, helped in the building and coding of this website.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="js/pages/about.js"></script>
+</body>
+</html>

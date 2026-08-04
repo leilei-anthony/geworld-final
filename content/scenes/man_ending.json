@@ -1,0 +1,12 @@
+{
+  "id": "man_ending",
+  "type": "ending",
+  "outcome": "death",
+  "background": "office.png",
+  "music": null,
+  "sfx": "scary_sting.mp3",
+  "glitch": true,
+  "title": "THERE WAS NEVER A CHOICE",
+  "message": "Carter: To my office. Now.",
+  "showCredits": true
+}

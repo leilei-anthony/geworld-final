@@ -1,0 +1,33 @@
+{
+  "id": "woman_livingroom_2",
+  "type": "scene",
+  "background": "WOMAN-livingroom.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "william", "sprite": "william.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "William", "text": "What?" },
+    { "speaker": "William", "text": "Are you… just going to stand… there?" },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "William", "text": "Dumbfuck…", "characters": [ { "id": "william", "sprite": "william.png", "position": "center" } ] },
+    { "speaker": "William", "text": "Where's dinner?" },
+    { "speaker": "Woman", "text": "I was in the middle of cleaning, dear.", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "It's not ready yet." },
+    { "speaker": "William", "text": "Of course.", "characters": [ { "id": "william", "sprite": "william.png", "position": "center" } ] },
+    { "speaker": "William", "text": "Of fucking course." },
+    { "speaker": "Woman", "text": "I'm so sorry…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "William", "text": "I don't want to hear any more of your fucking excuses!", "characters": [ { "id": "william", "sprite": "william.png", "position": "center" } ] },
+    { "speaker": "William", "text": "Bitches should know how to keep their mouths shut and do as they're told!" },
+    { "speaker": "Woman", "text": "I'll just finish cleaning the kitchen and it will be-", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "William", "text": "I'm starving, woman!", "characters": [ { "id": "william", "sprite": "william.png", "position": "center" } ] },
+    { "speaker": "William", "text": "You want me to die?" },
+    { "speaker": "William", "text": "Get in the fucking kitchen!" }
+  ],
+  "choices": [
+    { "text": "Quickly check your notifications before cooking. It might be urgent.", "next": "woman_livingroom_2_bad" },
+    { "text": "Do as you're told.", "next": "woman_kitchen_1" }
+  ]
+}

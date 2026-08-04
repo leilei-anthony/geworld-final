@@ -1,0 +1,26 @@
+{
+  "id": "woman_office_3",
+  "type": "scene",
+  "background": "office.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "woman", "sprite": "woman.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Woman", "text": "…" },
+    { "speaker": "Woman", "text": "I haven't received any emails from you, sir." },
+    { "speaker": "Carter", "text": "Hah!", "characters": [ { "id": "carter", "sprite": "carter-4.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "I didn't think it was possible for you to get dumber." },
+    { "speaker": "Carter", "text": "And here you are, proving me wrong." },
+    { "speaker": "Woman", "text": "…", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "Woman", "text": "I'm not sure I follow." },
+    { "speaker": "Carter", "text": "Of course, you don't.", "characters": [ { "id": "carter", "sprite": "carter-3.png", "position": "center" } ] },
+    { "speaker": "Carter", "text": "All you perfectly follow is the path to the pantry." }
+  ],
+  "choices": [
+    { "text": "Let him know about your situation.", "next": "woman_office_4" },
+    { "text": "Reiterate your point (no email).", "next": "woman_office_4" }
+  ]
+}

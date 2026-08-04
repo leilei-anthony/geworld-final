@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analog Horror Workplace VN — Menu</title>
+
+  <!-- style.css = layout/typography, effects.css = grain/scanlines/glitch/desaturation -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/effects.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <!-- Fixed, always-on visual effect layers, sit above everything else.
+         grain-overlay's background-image is generated once by effects.js (a tiny
+         canvas noise tile turned into a data URL), then animated with pure CSS. -->
+    <div id="grain-overlay"></div>
+    <div id="scanline-overlay"></div>
+
+    <!-- Audio elements + persistent mute/volume control. Playback itself
+         resets on every page navigation (separate .html files), but the
+         volume/mute *preference* is remembered via localStorage — see
+         audioManager.js. -->
+    <audio id="bgm-audio" loop></audio>
+    <audio id="sfx-audio"></audio>
+
+    <div id="audio-controls">
+      <button id="mute-btn" type="button" aria-label="Mute">Mute</button>
+      <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.6" aria-label="Volume">
+    </div>
+
+    <!-- Sub-view 1: Content warning. Shown once per browser tab session
+         (see js/pages/menu.js) — must be clicked through before the menu. -->
+    <section id="screen-warning" class="screen active">
+      <div class="panel">
+        <h1 id="warning-heading"></h1>
+        <p id="warning-body"></p>
+        <button id="warning-button" class="btn-primary" type="button"></button>
+      </div>
+    </section>
+
+    <!-- Sub-view 2: Main Menu — the site's hub. The startup-bg/-carter/-text
+         images are same-size flat layers (white where transparent would be)
+         designed to be stacked with mix-blend-mode: multiply — see style.css. -->
+    <section id="screen-menu" class="screen screen-startup">
+      <div class="startup-visual" aria-hidden="true">
+        <img class="startup-bg" src="assets/screens/startup-bg.png" alt="">
+        <img class="startup-carter" src="assets/screens/startup-carter.png" alt="">
+        <img class="startup-title" src="assets/screens/startup-text.png" alt="">
+      </div>
+      <nav id="site-nav">
+        <a href="index.html" aria-current="page">Menu</a>
+        <a href="play.html">Play</a>
+        <a href="paths.html">Paths</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+      <div class="page-content startup-content">
+        <div class="panel panel-startup">
+          <h1 id="menu-heading" class="visually-hidden"></h1>
+          <p id="menu-subtitle" class="visually-hidden"></p>
+          <a id="play-button" class="btn-primary" href="play.html"></a>
+          <p id="menu-how-to-play" class="hint"></p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ES modules only work when served over http(s), not opened directly as a
+       file:// URL — see README.md for the one-line local server command. -->
+  <script type="module" src="js/pages/menu.js"></script>
+</body>
+</html>

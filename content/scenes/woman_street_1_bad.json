@@ -1,0 +1,24 @@
+{
+  "id": "woman_street_1_bad",
+  "type": "scene",
+  "background": "WOMAN-street.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "woman", "sprite": "woman.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "Woman", "text": "…" },
+    { "speaker": "", "text": "(Footsteps quicken behind her.)", "sfx": "footsteps_street.mp3" },
+    { "speaker": "Stranger", "text": "Arrogant bitch." },
+    { "speaker": "Stranger", "text": "You think you can outrun me?" },
+    { "speaker": "", "text": "(Heavier footsteps. Ragged breathing closing in.)", "sfx": "footsteps_street.mp3" },
+    { "speaker": "Woman", "text": "Stop!" },
+    { "speaker": "Woman", "text": "Please!" },
+    { "speaker": "Stranger", "text": "You should've given me that smile then." }
+  ],
+  "choices": [
+    { "text": "Continue", "next": "woman_ending_shouldhavesmiled" }
+  ]
+}

@@ -1,0 +1,6 @@
+.DS_Store
+.claude/settings.local.json
+
+# Source zip the character sprites were extracted from — the extracted
+# PNGs in assets/characters/ are what the game actually uses.
+assets/GEWORLD_G5.zip

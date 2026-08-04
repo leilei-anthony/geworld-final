@@ -1,0 +1,28 @@
+{
+  "id": "woman_kitchen_1",
+  "type": "scene",
+  "background": "WOMAN-kitchen.png",
+  "music": null,
+  "sfx": null,
+  "glitch": false,
+  "characters": [
+    { "id": "woman", "sprite": "woman.png", "position": "center" }
+  ],
+  "dialogue": [
+    { "speaker": "", "text": "(Something sizzles in the pan.)" },
+    { "speaker": "Woman", "text": "When will this end?" },
+    { "speaker": "Woman", "text": "Everyday is the same." },
+    { "speaker": "William", "text": "I can hear your rotten mouth, you spoiled fuck!", "characters": [ { "id": "william", "sprite": "william.png", "position": "center" } ] },
+    { "speaker": "William", "text": "You're lucky you get to stay home more frequently." },
+    { "speaker": "William", "text": "All I do is work and work." },
+    { "speaker": "William", "text": "Working my ass off until this time of the night!" },
+    { "speaker": "Woman", "text": "I have work too, William.", "characters": [ { "id": "woman", "sprite": "woman.png", "position": "center" } ] },
+    { "speaker": "William", "text": "Yeah?", "characters": [ { "id": "william", "sprite": "william.png", "position": "center" } ] },
+    { "speaker": "William", "text": "Well, you probably slack off there too." },
+    { "speaker": "William", "text": "No wonder your boss fucking hates you." }
+  ],
+  "choices": [
+    { "text": "Use the appropriate seasoning.", "next": "woman_street_1" },
+    { "text": "Use something a little more… unique.", "next": "woman_kitchen_1_bad" }
+  ]
+}
